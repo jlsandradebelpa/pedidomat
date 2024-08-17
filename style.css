@@ -1,0 +1,145 @@
+/* Estilos para a página Pedido de Material */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha verticalmente os itens */
+    margin-bottom: 15px;
+}
+
+.form-element {
+    flex-grow: 1;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.form-element:last-child {
+    margin-right: 0;
+}
+
+.qtd-input {
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+
+    /* Adicione estas propriedades para fixar a posição */
+    position: absolute;
+    right: 100px; /* Ajuste conforme necessário para alinhar corretamente */
+}
+
+.material-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button-add,
+.button-remove {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+
+.button-add {
+    background-color: #28a745;
+    color: #ffffff;
+    border: 2px solid #218838;
+    position: absolute;
+    right: 70px;
+}
+
+.button-add:hover {
+    background-color: #218838;
+    border-color: #28a745;
+}
+
+.button-remove {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: 2px solid #c82333;
+    position: absolute;
+    right: 40px;
+}
+
+.button-remove:hover {
+    background-color: #c82333;
+    border-color: #dc3545;
+}
+
+.material-quantity {
+    margin-left: 10px;
+}
+
+#search {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.actions {
+    text-align: center;
+}
+
+.actions button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.back {
+    background-color: #f0f0f0;
+}
+
+.finalize {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Ajustes para o layout do campo Total Adicionado */
+.form-row {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
+}
+
+.total-added-label {
+    font-size: 16px;
+    margin-right: 10px; /* Espaço entre o label e o componente total adicionado */
+}
+
+.total-added {
+    display: flex;
+    align-items: center;
+}
+
+.total-added-value {
+    width: 40px; /* Ajuste conforme necessário para acomodar dois números */
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            margin: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .menu-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 250px;
+            padding: 12px;
+            margin: 10px auto;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .menu-button img {
+            height: 24px;
+            width: 24px;
+        }
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+        .menu-button.exit {
+            background-color: #dc3545;
+        }
+        .menu-button.exit:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="pedido.html" class="menu-button">
+        Pedido
+        <img src="pedido.jpg" alt="Pedido">
+    </a>
+    <a href="consultar.html" class="menu-button">
+        Consultar Pedido
+        <img src="consultar.jpg" alt="Consultar Pedido">
+    </a>
+    <a href="enviar.html" class="menu-button">
+        Enviar por Whatsapp
+        <img src="whatsapp.jpg" alt="Whatsapp">
+    </a>
+    <button class="menu-button exit" onclick="window.close()">Sair</button>
+
+</body>
+</html>

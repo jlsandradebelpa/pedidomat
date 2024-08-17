@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Arquivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Enviar Arquivo</h1>
+
+        <div class="button-container">
+            <button class="button exit" onclick="window.location.href='index.html'">Menu Principal</button>
+        </div>
+    </div>
+
+    <script>
+        function sendFile() {
+            // Implementar a rotina para tratar o envio do arquivo gerado
+        }
+    </script>
+
+</body>
+</html>
+{
+function sendToWhatsApp() {
+    if (Object.keys(selectedMaterials).length === 0) {
+        alert('Nenhum material foi selecionado.');
+        return;
+    }
+
+    let message = 'Solicitação de Material:\n';
+    for (let codigo in selectedMaterials) {
+        message += `${selectedMaterials[codigo].descricao} - Qtd: ${selectedMaterials[codigo].quantity}\n`;
+    }
+
+    const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+}
+}
