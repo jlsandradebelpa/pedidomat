@@ -143,3 +143,11 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.lista-materiais li {
+    font-size: 12px;
+}
+
+.material-item span {
+    font-size: 10px;
+  }

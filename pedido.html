@@ -98,9 +98,13 @@
             materialList.innerHTML = '';
             filteredMaterials.forEach(material => {
                 let div = document.createElement('div');
+
+                // Truncando a descrição para 54 caracteres
+                let descricaoTruncada = material.descricao.substring(0, 54);
+
                 div.classList.add('material-item');
                 div.innerHTML = `
-                    <span>${material.codigo} - ${material.descricao}</span>
+                    <span class="material-item">${material.codigo} - ${descricaoTruncada}</span>
                     <input id="qtd-${material.codigo}" type="number" placeholder="Qtd" min="1" class="qtd-input">
                     <button onclick="addMaterial('${material.codigo}', '${material.descricao}')" class="button-add">+</button>
                     <button onclick="removeMaterial('${material.codigo}')" class="button-remove">-</button>
