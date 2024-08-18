@@ -144,10 +144,10 @@ h1 {
     border-radius: 5px;
 }
 
-.lista-materiais li {
+.lista-materiais {
     font-size: 12px;
 }
 
-.material-item span {
+.material-item {
     font-size: 10px;
   }
