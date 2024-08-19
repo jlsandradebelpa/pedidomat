@@ -188,6 +188,13 @@
             const funcao = document.getElementById('funcao').value;
             const contract = document.getElementById('contract').value;
 
+            // Verificar se o campo "Matrícula" está preenchido
+            if (!matricula) {
+                alert('Por favor, preencha o campo Matrícula.');
+                document.getElementById('matricula').focus(); // Posiciona o cursor no campo "Matrícula"
+                return;
+            }
+
             if (Object.keys(selectedMaterials).length === 0 || !matricula) {
                 alert('Nenhum material foi selecionado ou matrícula não informada.');
                 return;
@@ -230,9 +237,13 @@
                 pedidoMensagem += `- ${item.descricao}: ${item.quantity}\n`;
             });
 
+            // Número fixo da central de atendimento (substitua pelo número real)
+            const centralNumber = '5591992069559'; // Exemplo:
+
             // Encode para usar no link do WhatsApp
             const whatsappMessage = encodeURIComponent(pedidoMensagem);
-            const whatsappLink = `https://wa.me/?text=${whatsappMessage}`;
+            const whatsappLink = `https://wa.me/${centralNumber}?text=${whatsappMessage}`;
+            // const whatsappLink = `https://wa.me/?text=${whatsappMessage}`;
 
             // Abrir o link no WhatsApp
             window.open(whatsappLink, '_blank');
