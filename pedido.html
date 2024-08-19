@@ -65,6 +65,7 @@
         <div class="actions">
             <button onclick="window.location.href='index.html'" class="back">Voltar ao Menu</button>
             <button onclick="finalizeRequest()" class="finalize">Finalizar Solicitação</button>
+            <button onclick="zerarContador()" class="finalize">Limpar seleção</button>    
         </div>
 
         <!-- Visualização do Pedido -->
@@ -194,11 +195,11 @@
 
             const now = new Date();
             const timestamp = now.getFullYear().toString() +
-                              (now.getMonth() + 1).toString().padStart(2, '0') +
-                              now.getDate().toString().padStart(2, '0') + "_" +
-                              now.getHours().toString().padStart(2, '0') +
-                              now.getMinutes().toString().padStart(2, '0') +
-                              now.getSeconds().toString().padStart(2, '0');
+                            (now.getMonth() + 1).toString().padStart(2, '0') +
+                            now.getDate().toString().padStart(2, '0') + "_" +
+                            now.getHours().toString().padStart(2, '0') +
+                            now.getMinutes().toString().padStart(2, '0') +
+                            now.getSeconds().toString().padStart(2, '0');
             const pedidoNumber = pedidoCounter++; // Incrementa o número do pedido
             const fileName = `ped${matricula}_${timestamp}.json`;
             const pedidoData = {
@@ -209,18 +210,34 @@
                 materiais: selectedMaterials
             };
 
-            // Gerar e baixar o arquivo JSON
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pedidoData));
-            const downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", fileName);
-            document.body.appendChild(downloadAnchorNode); 
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
+            function zerarContador() {
+                localStorage.removeItem('selectedMaterials');
+                // Atualizar a interface
+                const totalAddedElement = document.getElementById('totalAdded');
+                totalAddedElement.textContent = 0;
+                // Limpar a lista de materiais selecionados (adapte conforme sua estrutura HTML)
+                const materialList = document.getElementById('materialList');
+                materialList.innerHTML = '';
+            }
 
-            // Exibir a visualização do pedido
-            displayPedidoView(pedidoData);
+            // Gera a mensagem do pedido para WhatsApp
+            let pedidoMensagem = `Pedido de Material #${pedidoData.numero_pedido}\n`;
+            pedidoMensagem += `Matrícula: ${pedidoData.matricula}\n`;
+            pedidoMensagem += `Função: ${pedidoData.funcao}\n`;
+            pedidoMensagem += `Contrato: ${pedidoData.contrato}\n`;
+            pedidoMensagem += `Materiais Selecionados:\n`;
+            Object.entries(pedidoData.materiais).forEach(([codigo, item]) => {
+                pedidoMensagem += `- ${item.descricao}: ${item.quantity}\n`;
+            });
 
+            // Encode para usar no link do WhatsApp
+            const whatsappMessage = encodeURIComponent(pedidoMensagem);
+            const whatsappLink = `https://wa.me/?text=${whatsappMessage}`;
+
+            // Abrir o link no WhatsApp
+            window.open(whatsappLink, '_blank');
+
+            // Limpar seleção e atualizar a quantidade total
             localStorage.removeItem('selectedMaterials');
             selectedMaterials = {};
             updateTotalQuantity();
