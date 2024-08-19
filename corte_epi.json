@@ -1,0 +1,272 @@
+[
+  { "codigo": "01320063", "descricao": "ALICATE UNIVERSAL NBR-1KV 8 POL ISO5746"},
+  { "codigo": "01300023", "descricao": "BOLSA LUVAS PROTECAO 2 DIVISORIAS MOD. FG-164D ALT.480MM X LARG.200MM"},
+  { "codigo": "01300182", "descricao": "BOLSA LONA TIRACOLO FER-GER 350X290X80MM"},
+  { "codigo": "01300043", "descricao": "BOLSA EPI 520X210X360MM"},
+  { "codigo": "01320614", "descricao": "BOLSA CAPACETE 300X350X140MM"},
+  { "codigo": "01300045", "descricao": "BOLSA OCULOS SEG 200MM"},
+  {
+    "codigo": "01300015",
+    "descricao": "BAINHA CANIV COU SINT NT"
+  },
+  {
+    "codigo": "01300016",
+    "descricao": "CAPA CHUVA C/ CAPUZ PVC FORRADA 1,30 T-GG COR AMARELA C/ GRAVACAO ENDICON"
+  },
+  {
+    "codigo": "01320046",
+    "descricao": "CANIVETE"
+  },
+  {
+    "codigo": "01310022",
+    "descricao": "CAPACETE ABA TOTAL ABS AZ CLB"
+  },
+  {
+    "codigo": "01310405",
+    "descricao": "CINTO SEG PES 1 ARG D S/MOSQ"
+  },
+  {
+    "codigo": "01310032",
+    "descricao": "CARNEIRA CAPAC V-GUARD PEAD CATR 297415"
+  },
+  {
+    "codigo": "01310156",
+    "descricao": "LUVA ISOLANTE DE BORRACHA CLASSE 0 TENSAO 5KV TAM: 10 MAX:1000V"
+  },
+  {
+    "codigo": "01310157",
+    "descricao": "LUVA ISOLANTE DE BORRACHA CLASSE 2 TENSAO 20KV TAM.10 MAX.17000V"
+  },
+  {
+    "codigo": "01310012",
+    "descricao": "LUVA RASP NT PALM-DED MED U"
+  },
+  {
+    "codigo": "01310015",
+    "descricao": "LUVA VAQ PETROLHEIRA NT PALM CT U"
+  },
+  {
+    "codigo": "01310374",
+    "descricao": "LUVA VAQ COBERTURA NT PALM MED 11"
+  },
+  {
+    "codigo": "01310027",
+    "descricao": "OCULOS AMP VISAO LENTE PC INC"
+  },
+  {
+    "codigo": "01310029",
+    "descricao": "OCULOS AMP VISAO LENTE PC CZ"
+  },
+  {
+    "codigo": "02501226",
+    "descricao": "TESTE CANET NEON 3X60MM 1000V"
+  },
+  {
+    "codigo": "01310454",
+    "descricao": "TRAVA QUEDA DESLIZANTE S/EXT"
+  },
+  {
+    "codigo": "01300033",
+    "descricao": "TALABARTE SP CORDA-PA 2M LM"
+  },
+  {
+    "codigo": "01310456",
+    "descricao": "MOSQUETAO OV AI TRP ROSC 25KN"
+  },
+  {
+    "codigo": "02560619",
+    "descricao": "PROTETOR UVA/UVB 60 CR 120G"
+  },
+  {
+    "codigo": "01310028",
+    "descricao": "PROTETOR AURICULAR COGUM SI LJ MED"
+  },
+  {
+    "codigo": "01310173",
+    "descricao": "PERNEIRA COU BIDIN NT C/JOELH U"
+  },
+  {
+    "codigo": "01310583",
+    "descricao": "OCULOS SOB LENTE PC INC"
+  },
+  {
+    "codigo": "01310143",
+    "descricao": "OCULOS SOB LENTE PC CZ"
+  },
+  {
+    "codigo": "01310097",
+    "descricao": "BOTINA COURO UNIS PT BIQ 38"
+  },
+  {
+    "codigo": "01310098",
+    "descricao": "BOTINA COURO UNIS PT BIQ 39"
+  },
+  {
+    "codigo": "01310099",
+    "descricao": "BOTINA COURO UNIS PT BIQ 40"
+  },
+  {
+    "codigo": "01310100",
+    "descricao": "BOTINA COURO UNIS PT BIQ 41"
+  },
+  {
+    "codigo": "01310101",
+    "descricao": "BOTINA COURO UNIS PT BIQ 42"
+  },
+  {
+    "codigo": "01310102",
+    "descricao": "BOTINA COURO UNIS PT BIQ 43"
+  },
+  {
+    "codigo": "01310103",
+    "descricao": "BOTINA COURO UNIS PT BIQ 44"
+  },
+  {
+    "codigo": "01310145",
+    "descricao": "BOTINA COURO UNIS PT BIQ 35"
+  },
+  {
+    "codigo": "01310351",
+    "descricao": "BOTINA COURO UNIS PT BIQ 45"
+  },
+  {
+    "codigo": "01310447",
+    "descricao": "BOTINA COURO UNIS PT BIQ 37"
+  },
+  {
+    "codigo": "01310492",
+    "descricao": "BOTINA COURO UNIS PT BIQ 34"
+  },
+  {
+    "codigo": "01310594",
+    "descricao": "BOTINA COURO UNIS PT BIQ 46"
+  },
+  {
+    "codigo": "01310602",
+    "descricao": "BOTINA COURO UNIS PT BIQ 36"
+  },
+  {
+    "codigo": "01310604",
+    "descricao": "BOTINA COURO UNIS PT BIQ 48"
+  },
+  {
+    "codigo": "01310611",
+    "descricao": "BOTINA COURO UNIS PT BIQ 46"
+  },
+  {
+    "codigo": "01310406",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 35 C/ LONGO"
+  },
+  {
+    "codigo": "01310407",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 36 C/ LONGO"
+  },
+  {
+    "codigo": "01310017",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 37 C/ LONGO"
+  },
+  {
+    "codigo": "01310369",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 38 C/ LONG"
+  },
+  {
+    "codigo": "01310018",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 39 C/ LONGO"
+  },
+  {
+    "codigo": "01310354",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 40 C/ LONGO"
+  },
+  {
+    "codigo": "01310021",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 41 C/ LONGO"
+  },
+  {
+    "codigo": "01310019",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 42 C/ LONGO"
+  },
+  {
+    "codigo": "01310020",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 43 C/ LONGO"
+  },
+  {
+    "codigo": "01310033",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 44 C/ LONGO"
+  },
+  {
+    "codigo": "01310565",
+    "descricao": "BOTA IMPERM LG UNIS PT S/BIQ 45 C/ LONGO"
+  },
+  {
+    "codigo": "01310612",
+    "descricao": "BOTA IMPERM LG UNIS PT S BIQ/ 48 C/ LONGO"
+  },
+  {
+    "codigo": "02560308",
+    "descricao": "CALCA A-CHAMA BRIM 36 EQUATORIAL"
+  },
+  {
+    "codigo": "02560291",
+    "descricao": "CALCA A-CHAMA BRIM 38 EQUATORIAL"
+  },
+  {
+    "codigo": "02560292",
+    "descricao": "CALCA A-CHAMA BRIM 40 EQUATORIAL"
+  },
+  {
+    "codigo": "02560293",
+    "descricao": "CALCA A-CHAMA BRIM 42 EQUATORIAL"
+  },
+  {
+    "codigo": "02560300",
+    "descricao": "CALCA A-CHAMA BRIM 44 EQUATORIAL"
+  },
+  {
+    "codigo": "02560294",
+    "descricao": "CALCA A-CHAMA BRIM 46 EQUATORIAL"
+  },
+  {
+    "codigo": "02560295",
+    "descricao": "CALCA A-CHAMA BRIM 48 EQUATORIAL"
+  },
+  {
+    "codigo": "02560301",
+    "descricao": "CALCA A-CHAMA BRIM 50 EQUATORIAL"
+  },
+  {
+    "codigo": "02560630",
+    "descricao": "CALCA A-CHAMA BRIM 52 EQUATORIAL"
+  },
+  {
+    "codigo": "01330476",
+    "descricao": "CALCAA-CHAMA BRIM 56 EQUATORIAL"
+  },
+  {
+    "codigo": "01330475",
+    "descricao": "CAMISA ANTICHAM BRIM MG LG EXG EQUATORIAL"
+  },
+  {
+    "codigo": "02560296",
+    "descricao": "CAMISA ANTICHAM BRIM MG LG G EQUATORIA"
+  },
+  {
+    "codigo": "02560298",
+    "descricao": "CAMISA ANTICHAM BRIM MG LG GG EQUATORIAL"
+  },
+  {
+    "codigo": "02560297",
+    "descricao": "CAMISA ANTICHAM BRIM MG LG M EQUATORIAL"
+  },
+  {
+    "codigo": "02560299",
+    "descricao": "CAMISA ANTICHAM BRIM MG LG P EQUATORIAL"
+  },
+  {
+    "codigo": "01330442",
+    "descricao": "CAMISA ANTICHAM BRIM MG LG XG EQUATORIAL"
+  },
+  {
+    "codigo": "01330477",
+    "descricao": "CAMISA ANTICHAM BRIM MG LG XG EQUATORIAL"
+  }
+]

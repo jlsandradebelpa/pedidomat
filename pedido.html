@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido de Material</title>
+    <title>Solicitação de Material</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>Pedido de Material</h1>
+        <h1>Solicitação de Material</h1>
 
-        <!-- Formulário -->
-        <div class="form-group">
-            <!-- Seleção de Contrato e matrícula -->
-            <div class="form-row">
-                <div class="form-element">
-                    <label for="contract">Contrato</label>
-                    <select id="contract" onchange="loadMaterials()">
-                        <option value="linha_viva">Linha Viva</option>
-                        <option value="linha_morta">Linha Morta</option>
-                    </select>
+        <!-- Abas -->
+        <div class="tabs">
+            <button onclick="openTab('geral')">Geral</button>
+            <button onclick="openTab('materiaisTab')">Materiais</button>            
+            <!-- <button class="tab-button active" onclick="openTab('geral')">Geral</button> -->
+            <!-- <button class="tab-button" onclick="openTab('materiaisTab')">Materiais</button> -->
+        </div>
+
+        <!-- Aba Geral -->
+        <div id="geral" class="tab-content active">
+            <!-- Formulário Geral -->
+            <div class="form-group">
+                <!-- Seleção de Contrato e matrícula -->
+                <div class="form-row">
+                    <div class="form-element">
+                        <label for="contract">Contrato</label>
+                        <select id="contract" onchange="loadMaterials()">
+                            <option value="linha_viva">Linha Viva</option>
+                            <option value="linha_morta">Linha Morta</option>
+                            <option value="corte_epi">Corte EPI</option>
+                            <option value="corte_epc">Corte EPC</option>
+                        </select>
+                    </div>
+
+                    <div class="form-element">
+                        <label for="matricula">Matrícula</label>
+                        <input type="text" id="matricula" placeholder="Informe sua matrícula">
+                    </div>
                 </div>
 
-                <div class="form-element">
-                    <label for="matricula">Matrícula</label>
-                    <input type="text" id="matricula" placeholder="Informe sua matrícula">
-                </div>
-            </div>
-
-            <!-- Função e Total Adicionado -->
-            <div class="form-row">
                 <div class="form-element">
                     <label for="funcao">Função</label>
                     <select id="funcao">
@@ -38,77 +47,128 @@
                         <option value="eletricista">Eletricista</option>
                     </select>
                 </div>
-
-                <div class="form-element total-added-container">
-                    <label class="total-added-label">Materiais :</label>
-                    <div class="total-added">
-                        <span id="totalAdded" class="total-added-value">0</span>
-                    </div>
-                </div>
             </div>
-                
-            <!-- Pesquisa -->
+        </div>
+
+        <!-- Aba Materiais -->
+        <div id="materiaisTab" class="tab-content">
             <div class="form-row">
                 <div class="form-element">
-                    <input type="text" id="search" placeholder="Pesquisar material" maxlength="100" oninput="handleInput()">
+                    <input type="text" id="search" class="input-large" placeholder="Pesquisar material" maxlength="100" oninput="handleInput()">
                 </div>
             </div>
-            
+
+            <!-- Lista de Materiais -->
+            <div id="materialList" class="material-list">
+                <!-- Lista de materiais será carregada aqui -->
+            </div>
         </div>
 
-        <!-- Lista de Materiais -->
-        <div id="materialList" class="material-list">
-            <!-- Lista de materiais será carregada aqui -->
-        </div>
+        <!-- Visualização do Pedido -->
+        <!-- <div id="pedidoView" class="tab-content" style="display:none;"> -->
+            <!-- A visualização do pedido será gerada aqui -->
+        <!-- </div> -->
 
         <!-- Ações -->
         <div class="actions">
             <button onclick="window.location.href='index.html'" class="back">Voltar ao Menu</button>
             <button onclick="finalizeRequest()" class="finalize">Finalizar Solicitação</button>
-            <button onclick="zerarContador()" class="finalize">Limpar seleção</button>    
+            <button onclick="zerarContador()" class="finalize">Limpar seleção</button>
+        </div>
+    </div>
+
+    <!-- Frame de Informações Adicionais -->
+    <div id="addInfoFrame" class="add-info-frame" style="display:none;">
+        <h3>Informações Adicionais</h3>
+        <div class="form-element">
+            <label for="motivo">Motivo</label>
+            <select id="motivo">
+                <option value="perda">1 - Perda</option>
+                <option value="troca">2 - Troca por desgaste</option>
+                <option value="roubo">3 - Roubo ou Furto</option>
+                <option value="incremento">4 - Incremento</option>
+            </select>
         </div>
 
-        <!-- Visualização do Pedido -->
-        <div id="pedidoView" class="pedido-view" style="display:none;">
-            <!-- A visualização do pedido será gerada aqui -->
+        <div class="form-element">
+            <label for="gallery">Acessar Galeria</label>
+            <input type="file" id="gallery" accept="image/*">
+        </div>
+
+        <div class="form-element">
+            <button onclick="capturePhoto()">Tirar Foto</button>
+        </div>
+
+        <div class="form-element">
+            <button onclick="closeAddInfoFrame()">Fechar</button>
         </div>
     </div>
 
     <script>
         let materials = [];
         let selectedMaterials = JSON.parse(localStorage.getItem('selectedMaterials')) || {};
-        let pedidoCounter = 1; // Para fins de exemplo, começando com um número fixo de pedido
+        let pedidoCounter = 1;
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+        }
 
         function loadMaterials() {
             const contract = document.getElementById('contract').value;
-            const fileName = contract === 'linha_viva' ? 'linha_viva.json' : 'linha_morta.json';
+
+            //const fileName = contract === 'linha_viva' ? 'linha_viva.json' : 'linha_morta.json';
+            let fileName = '';
+
+            if (contract === 'linha_viva') {
+                fileName = 'linha_viva.json';
+            } else if (contract === 'linha_morta') {
+                fileName = 'linha_morta.json';
+            } else if (contract === 'corte_epi') {
+                fileName = 'corte_epi.json';
+            } else if (contract === 'corte_epc') {
+                fileName = 'corte_epc.json';
+            } else {
+                console.error('Contrato não reconhecido:', contract);
+                return;
+            }            
+            
 
             fetch(fileName)
                 .then(response => response.json())
                 .then(data => {
                     materials = data;
-                    filterMaterials(); // Atualiza a exibição após carregar os materiais
+                    filterMaterials();
                 })
                 .catch(error => {
                     console.error('Erro ao carregar o arquivo JSON:', error);
                 });
         }
 
+        function openTab(tabName) {
+            // Oculta todas as abas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Mostra a aba selecionada
+            document.getElementById(tabName).classList.add('active');
+        }
+
+
         function displayMaterials(filteredMaterials) {
             const materialList = document.getElementById('materialList');
             materialList.innerHTML = '';
             filteredMaterials.forEach(material => {
                 let div = document.createElement('div');
-
-                // Truncando a descrição para 54 caracteres
                 let descricaoTruncada = material.descricao.substring(0, 54);
-
                 div.classList.add('material-item');
                 div.innerHTML = `
                     <span class="material-item">${material.codigo} - ${descricaoTruncada}</span>
                     <input id="qtd-${material.codigo}" type="number" placeholder="Qtd" min="1" class="qtd-input">
                     <button onclick="addMaterial('${material.codigo}', '${material.descricao}')" class="button-add">+</button>
                     <button onclick="removeMaterial('${material.codigo}')" class="button-remove">-</button>
+                    <button onclick="openAddInfoFrame()" class="button-info">Info</button>
                     `;
                 materialList.appendChild(div);
             });
@@ -117,9 +177,6 @@
         function addMaterial(codigo, descricao) {
             const quantityInput = document.getElementById(`qtd-${codigo}`);
             const quantity = parseInt(quantityInput.value, 10);
-
-            // Exibir o valor inicial da quantidade no console
-            console.log(`acrescenta mais 1 ${codigo} (${descricao}): ${quantity}`);
 
             if (quantity > 0) {
                 if (selectedMaterials[codigo]) {
@@ -139,15 +196,11 @@
             const quantityInput = document.getElementById(`qtd-${codigo}`);
             const quantity = parseInt(quantityInput.value, 10);
 
-            // Exibir o valor inicial da quantidade no console
-            console.log(`Diminui 1 ${codigo} : ${quantity}`);
-
             if (selectedMaterials[codigo]) {
                 if (quantity > 0) {
                     if (selectedMaterials[codigo].quantity > quantity) {
                         selectedMaterials[codigo].quantity -= quantity;
                     } else {
-                        //selectedMaterials[codigo] = { descricao, quantity };
                         delete selectedMaterials[codigo];
                     }
                     localStorage.setItem('selectedMaterials', JSON.stringify(selectedMaterials));
@@ -159,7 +212,7 @@
                 alert('Material não encontrado na lista.');
             }
         }
-        
+
         function filterMaterials() {
             const searchValue = document.getElementById('search').value.toUpperCase();
             const filteredMaterials = materials.filter(material => 
@@ -188,10 +241,9 @@
             const funcao = document.getElementById('funcao').value;
             const contract = document.getElementById('contract').value;
 
-            // Verificar se o campo "Matrícula" está preenchido
             if (!matricula) {
                 alert('Por favor, preencha o campo Matrícula.');
-                document.getElementById('matricula').focus(); // Posiciona o cursor no campo "Matrícula"
+                document.getElementById('matricula').focus();
                 return;
             }
 
@@ -207,7 +259,7 @@
                             now.getHours().toString().padStart(2, '0') +
                             now.getMinutes().toString().padStart(2, '0') +
                             now.getSeconds().toString().padStart(2, '0');
-            const pedidoNumber = pedidoCounter++; // Incrementa o número do pedido
+            const pedidoNumber = pedidoCounter++;
             const fileName = `ped${matricula}_${timestamp}.json`;
             const pedidoData = {
                 numero_pedido: pedidoNumber,
@@ -217,64 +269,70 @@
                 materiais: selectedMaterials
             };
 
-            function zerarContador() {
-                localStorage.removeItem('selectedMaterials');
-                // Atualizar a interface
-                const totalAddedElement = document.getElementById('totalAdded');
-                totalAddedElement.textContent = 0;
-                // Limpar a lista de materiais selecionados (adapte conforme sua estrutura HTML)
-                const materialList = document.getElementById('materialList');
-                materialList.innerHTML = '';
-            }
-
-            // Gera a mensagem do pedido para WhatsApp
-            let pedidoMensagem = `Pedido de Material #${pedidoData.numero_pedido}\n`;
+            let pedidoMensagem = `Solicitação de Material #${pedidoData.numero_pedido}\n`;
             pedidoMensagem += `Matrícula: ${pedidoData.matricula}\n`;
             pedidoMensagem += `Função: ${pedidoData.funcao}\n`;
             pedidoMensagem += `Contrato: ${pedidoData.contrato}\n`;
-            pedidoMensagem += `Materiais Selecionados:\n`;
-            Object.entries(pedidoData.materiais).forEach(([codigo, item]) => {
-                pedidoMensagem += `- ${item.descricao}: ${item.quantity}\n`;
-            });
+            pedidoMensagem += 'Materiais:\n';
+            for (const codigo in pedidoData.materiais) {
+                const item = pedidoData.materiais[codigo];
+                pedidoMensagem += `- ${item.descricao}: ${item.quantity} unidade(s)\n`;
+            }
 
-            // Número fixo da central de atendimento (substitua pelo número real)
-            const centralNumber = '5591992069559'; // Exemplo:
+            const encodedMessage = encodeURIComponent(pedidoMensagem);
+            const whatsappNumber = '5591992069559';
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-            // Encode para usar no link do WhatsApp
-            const whatsappMessage = encodeURIComponent(pedidoMensagem);
-            const whatsappLink = `https://wa.me/${centralNumber}?text=${whatsappMessage}`;
-            // const whatsappLink = `https://wa.me/?text=${whatsappMessage}`;
+            const pedidoBlob = new Blob([JSON.stringify(pedidoData, null, 2)], { type: 'application/json' });
+            const pedidoUrl = URL.createObjectURL(pedidoBlob);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = pedidoUrl;
+            downloadLink.download = fileName;
+            downloadLink.click();
 
-            // Abrir o link no WhatsApp
-            window.open(whatsappLink, '_blank');
+            window.open(whatsappUrl, '_blank');
+        }
 
-            // Limpar seleção e atualizar a quantidade total
-            localStorage.removeItem('selectedMaterials');
+        function zerarContador() {
             selectedMaterials = {};
+            localStorage.setItem('selectedMaterials', JSON.stringify(selectedMaterials));
             updateTotalQuantity();
-            alert('Solicitação finalizada com sucesso!');
         }
 
-        function displayPedidoView(pedidoData) {
-            const pedidoView = document.getElementById('pedidoView');
-            pedidoView.style.display = 'block';
-            pedidoView.innerHTML = `
-                <h2>Pedido de Material #${pedidoData.numero_pedido}</h2>
-                <p><strong>Contrato:</strong> ${pedidoData.contrato}</p>
-                <p><strong>Função:</strong> ${pedidoData.funcao}</p>
-                <p><strong>Matrícula:</strong> ${pedidoData.matricula}</p>
-                <h3>Materiais Selecionados:</h3>
-                <ul>
-                    ${Object.entries(pedidoData.materiais).map(([codigo, item]) => 
-                        `<li>${item.descricao}: ${item.quantity}</li>`
-                    ).join('')}
-                </ul>
-            `;
+        function openAddInfoFrame() {
+            document.getElementById('addInfoFrame').style.display = 'block';
         }
 
-        // Carregar materiais ao abrir a página
-        loadMaterials();
+        function closeAddInfoFrame() {
+            document.getElementById('addInfoFrame').style.display = 'none';
+        }
+
+        function capturePhoto() {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+                        const video = document.createElement('video');
+                        video.srcObject = stream;
+                        video.play();
+
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                        const photoUrl = canvas.toDataURL('image/png');
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = photoUrl;
+                        downloadLink.download = 'captured_image.png';
+                        downloadLink.click();
+                    })
+                    .catch(error => {
+                        console.error('Erro ao acessar a câmera:', error);
+                        alert('Não foi possível acessar a câmera.');
+                    });
+            } else {
+                alert('Câmera não disponível no seu dispositivo.');
+            }
+        }
     </script>
-
 </body>
 </html>

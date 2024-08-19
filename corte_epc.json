@@ -1,0 +1,179 @@
+[
+  { "codigo": "02560554", "descricao": "ALAVANCA A1045 1 POL 2M PONTA-RETA"},
+  { "codigo": "02550246", "descricao": "ALICATE AMPERIMETRO DIGITAL 20~1000A"},
+  { "codigo": "01320123", "descricao": "ALICATE BOMBA DAGUA 10 POL 40MM NBR-1KV"},
+  { "codigo": "01320271", "descricao": "ALICATE BOMBA DAGUA 12 POL 70MM VDE-1KV"},
+  { "codigo": "02560342", "descricao": "ALICATE CORTE DIAG-AMER 152,4MM NBR-1KV"},
+  { "codigo": "01320082", "descricao": "ARCO SERRA FIX 12 POL AC VDE-1KV FECH"},
+  { "codigo": "01300162", "descricao": "ATERRAMENTO SECUNDARIO CABO MULTIPLEXADO C/ BOLSA"},
+  { "codigo": "01300049", "descricao": "BAINHA FACAO COU SINT NT 20 POL"},
+  { "codigo": "01300180", "descricao": "BALDE FER-GER 350X300MM"},
+  { "codigo": "01300024", "descricao": "BANDEIROLA SINALIZACAO 0,3X0,4M"},
+  { "codigo": "01300043", "descricao": "BOLSA EPI 520X210X360MM"},
+  { "codigo": "01300184", "descricao": "BOLSA VARA MAN 1480X450MM"},
+  { "codigo": "01320414", "descricao": "BROCA ACO RAPIDO 6MM"},
+  { "codigo": "01300085", "descricao": "CABECOTE VARA MANOBRA UNIV AI 90"},
+  { "codigo": "01320469", "descricao": "CAIXA SANF FER-GER 500X200X165MM"},
+  { "codigo": "01320092", "descricao": "CAVADEIRA ART 196X166MM MAD 1,8M"},
+  { "codigo": "01320240", "descricao": "CHAVE AJUSTAVEL 12 POL VDE-1KV"},
+  { "codigo": "01320215", "descricao": "CHAVE AJUSTAVEL 8 POL VDE-1KV"},
+  { "codigo": "01320935", "descricao": "CHAVE ESTRELA CATRACA ISOLADA  13MM"},
+  { "codigo": "01320219", "descricao": "CHAVE FENDA SIMP NBR-1KV 1/4X10 POL" },
+  { "codigo": "01320217", "descricao": "CHAVE FENDA SIMP NBR-1KV 1/4X6 POL"},
+  {
+    "codigo": "01320357",
+    "descricao": "CHAVE FENDA SIMP NBR-1KV 4,5X100MM"
+  },
+  {
+    "codigo": "02560063",
+    "descricao": "CHAVE HEX JG 9PC L NORM SXT ACV"
+  },
+  {
+    "codigo": "01320218",
+    "descricao": "CHAVE PHILIPS NBR-1KV 1/4X6 POL"
+  },
+  {
+    "codigo": "01300243",
+    "descricao": "CONE FLEX PE LJ-BR 0,75M 2 FAIXAS REFL"
+  },
+  {
+    "codigo": "01300012",
+    "descricao": "CORDA  TRANC  EST  PP  12MM  BR  LINHA  DE  VIDA"
+  },
+  {
+    "codigo": "01300010",
+    "descricao": "CORDA TRANC EST PES 3/8 POL BR"
+  },
+  {
+    "codigo": "01300304",
+    "descricao": "DISPOSITIVO ANTIQUEDA DE CARTUCHO AQDC"
+  },
+  {
+    "codigo": "01300206",
+    "descricao": "ESCADA EXT FBV/AL  4,50  X  7,80  MT"
+  },
+  {
+    "codigo": "01300209",
+    "descricao": "ESCADA FIBRA VIDRO SINGELA 4,50 MT"
+  },
+  {
+    "codigo": "01300207",
+    "descricao": "ESCADA SING CON FBV/AL        - 3,00 MT"
+  },
+  {
+    "codigo": "01320508",
+    "descricao": "ESCOVA ACO ENCAIXE UNIVERSAL P/ LIMPEZA TIPO V"
+  },
+  {
+    "codigo": "01320066",
+    "descricao": "FACAO (TERCADO) PARA MATO CABO DE MADEIRA   No 20"
+  },
+  {
+    "codigo": "00522897",
+    "descricao": "FAROL AUXILIAR (SELUBIM) 12V C/ EXTENSAO USO EXTERNO"
+  },
+  {
+    "codigo": "01300038",
+    "descricao": "FITA   ANCORAGEM    EURECA   SUB  ESCADA  PA  40X2010MM  25KN"
+  },
+  {
+    "codigo": "01300542",
+    "descricao": "FITA EURECA PARA SUPORTE DE ESCADA 22KN 2 PONTAS"
+  },
+  {
+    "codigo": "01300245",
+    "descricao": "FITA SINAL REFLETIVA 5X2000CM LJ"
+  },
+  {
+    "codigo": "01320381",
+    "descricao": "FURADEIRA C/IMP 2900RPM 127V 600W"
+  },
+  {
+    "codigo": "01300230",
+    "descricao": "GANCHOS P/  ICAMENTO DE MATERIAIS"
+  },
+  {
+    "codigo": "02560469",
+    "descricao": "GARRAFA TERMICA 5L PL AZE AMP VD"
+  },
+  {
+    "codigo": "01320428",
+    "descricao": "LAMINA SERRA HSS-BM 18Z 12X1/2X0.024 POL"
+  },
+  {
+    "codigo": "02501200",
+    "descricao": "LANTERNA ALCA INTEGR PL PT HALOG REC BIV"
+  },
+  {
+    "codigo": "01300276",
+    "descricao": "LENCOL NR 2MM 60SHA LISA LJ 0,3X0,9M"
+  },
+  {
+    "codigo": "01300022",
+    "descricao": "MACACAO APICULTOR PA BR S/REFL G S/L"
+  },
+  {
+    "codigo": "01300254",
+    "descricao": "MALETA PARA MEDICAMENTOS 31 X 15 X 13 CM"
+  },
+  {
+    "codigo": "01320055",
+    "descricao": "MARRETA 2KG COM CABO"
+  },
+  {
+    "codigo": "01300046",
+    "descricao": "MOSQUETAO OV AC DUPLA ROSC 25KN"
+  },
+  {
+    "codigo": "00524784",
+    "descricao": "PATESCA CORDA 5/8 POL 1ROLD 454 KGF C/ TRAVA"
+  },
+  {
+    "codigo": "01720063",
+    "descricao": "PRANCHETA OF"
+  },
+  {
+    "codigo": "01320104",
+    "descricao": "REBITADOR MANUAL"
+  },
+  {
+    "codigo": "01300155",
+    "descricao": "RECOLHEDOR DE FITA DE SINALIZACAO"
+  },
+  {
+    "codigo": "01320444",
+    "descricao": "SERRA COPO 1.1/2 POL HSS-BM 38MM VAR"
+  },
+  {
+    "codigo": "02550124",
+    "descricao": "SERRA COPO 1.1/4 POL HSS-BM 32MM VAR"
+  },
+  {
+    "codigo": "01320510",
+    "descricao": "SOCADOR AC 2700MM"
+  },
+  {
+    "codigo": "01320445",
+    "descricao": "SUPORTE SERRA COPO CIL HSS 32~210MM 1/2"
+  },
+  {
+    "codigo": "00525541",
+    "descricao": "TALCO INDUSTRIAL"
+  },
+  {
+    "codigo": "01320319",
+    "descricao": "TALHADEIRA CH A5160 19X254MM S/EMP"
+  },
+  {
+    "codigo": "02500126",
+    "descricao": "TESOURAO ISOLADO 38 X 2.000 MM CABO 336,8 CAA L.T. 30 POL"
+  },
+  {
+    "codigo": "02560382",
+    "descricao": "TRENA FITA MANIVELA FBV 13MM 50M"
+  },
+  {
+    "codigo": "01300068",
+    "descricao": "VARA MANOBRA FIBRA VIDRO 38MM 5 ELEMENTOS C/ CABECOTE P/ MANOBRA CHAVES NR-10 C/ BOLSA"
+  }
+]
