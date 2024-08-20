@@ -37,7 +37,7 @@
                             <option value="EPC">EPC</option>
                             <option value="EPI">EPI</option>
                         </select>
-                    </div>                    
+                    </div>     
 
                     <div class="form-element">
                         <label for="matricula">Matrícula</label>
@@ -331,6 +331,8 @@
             updateTotalQuantity();
         }
 
+        // Zera as solicitações antes de abrir a pagina
+        zerarContador()
         // Carregar materiais ao abrir a página
         loadMaterials();
 
