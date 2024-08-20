@@ -14,8 +14,6 @@
         <div class="tabs">
             <button onclick="openTab('geral')">Geral</button>
             <button onclick="openTab('materiaisTab')">Materiais</button>            
-            <!-- <button class="tab-button active" onclick="openTab('geral')">Geral</button> -->
-            <!-- <button class="tab-button" onclick="openTab('materiaisTab')">Materiais</button> -->
         </div>
 
         <!-- Aba Geral -->
@@ -27,12 +25,19 @@
                     <div class="form-element">
                         <label for="contract">Contrato</label>
                         <select id="contract" onchange="loadMaterials()">
-                            <option value="linha_viva">Linha Viva</option>
-                            <option value="linha_morta">Linha Morta</option>
-                            <option value="corte_epi">Corte EPI</option>
-                            <option value="corte_epc">Corte EPC</option>
+                            <!-- <option value="linha_viva">Linha Viva</option> -->
+                            <!-- <option value="linha_morta">Linha Morta</option> -->
+                            <option value="corte">Corte</option>
                         </select>
                     </div>
+
+                    <div class="form-element">
+                        <label for="grupo">Grupo</label>
+                        <select id="grupo" onchange="loadMaterials()">
+                            <option value="EPC">EPC</option>
+                            <option value="EPI">EPI</option>
+                        </select>
+                    </div>                    
 
                     <div class="form-element">
                         <label for="matricula">Matrícula</label>
@@ -41,12 +46,11 @@
                 </div>
 
                 <div class="form-element">
-                    <label for="funcao">Função</label>
-                    <select id="funcao">
-                        <option value="encarregado">Encarregado</option>
-                        <option value="eletricista">Eletricista</option>
-                    </select>
+                    <label for="totalAdded">Qtde materiais solicitados</label>
+                    <span id="totalAdded" class="total-quantity">0</span>
                 </div>
+
+
             </div>
         </div>
 
@@ -77,7 +81,7 @@
         </div>
     </div>
 
-    <!-- Frame de Informações Adicionais -->
+    <!-- Frame de Informações Adicionais 
     <div id="addInfoFrame" class="add-info-frame" style="display:none;">
         <h3>Informações Adicionais</h3>
         <div class="form-element">
@@ -89,7 +93,7 @@
                 <option value="incremento">4 - Incremento</option>
             </select>
         </div>
-
+  
         <div class="form-element">
             <label for="gallery">Acessar Galeria</label>
             <input type="file" id="gallery" accept="image/*">
@@ -103,6 +107,7 @@
             <button onclick="closeAddInfoFrame()">Fechar</button>
         </div>
     </div>
+    -->
 
     <script>
         let materials = [];
@@ -116,23 +121,25 @@
 
         function loadMaterials() {
             const contract = document.getElementById('contract').value;
+            const grupo = document.getElementById('grupo').value.toLowerCase();
 
             //const fileName = contract === 'linha_viva' ? 'linha_viva.json' : 'linha_morta.json';
             let fileName = '';
 
-            if (contract === 'linha_viva') {
-                fileName = 'linha_viva.json';
-            } else if (contract === 'linha_morta') {
-                fileName = 'linha_morta.json';
-            } else if (contract === 'corte_epi') {
-                fileName = 'corte_epi.json';
-            } else if (contract === 'corte_epc') {
-                fileName = 'corte_epc.json';
+            if (contract === 'corte') {
+                if (grupo === 'epi') {
+                    fileName = 'corte_epi.json';
+                }else if (grupo === 'epc') {
+                    fileName = 'corte_epc.json';
+                } else {
+                    console.error('Grupo não reconhecido:', contract);
+                    return;
+                }
             } else {
                 console.error('Contrato não reconhecido:', contract);
-                return;
-            }            
-            
+                return;                
+            }
+           
 
             fetch(fileName)
                 .then(response => response.json())
@@ -165,10 +172,9 @@
                 div.classList.add('material-item');
                 div.innerHTML = `
                     <span class="material-item">${material.codigo} - ${descricaoTruncada}</span>
-                    <input id="qtd-${material.codigo}" type="number" placeholder="Qtd" min="1" class="qtd-input">
-                    <button onclick="addMaterial('${material.codigo}', '${material.descricao}')" class="button-add">+</button>
-                    <button onclick="removeMaterial('${material.codigo}')" class="button-remove">-</button>
-                    <button onclick="openAddInfoFrame()" class="button-info">Info</button>
+                    <input id="qtd-${material.codigo}" type="text" placeholder="Qtd" class="qtd-input" oninput="validateNumber(this)">
+                    <button onclick="addMaterial('${material.codigo}', '${material.descricao}')" class="button-add"><img src="concluido.png" alt="Concluído" />
+                    <button onclick="removeMaterial('${material.codigo}')" class="button-remove"><img src="cancelar.png" alt="Cancelar" />
                     `;
                 materialList.appendChild(div);
             });
@@ -187,6 +193,9 @@
 
                 localStorage.setItem('selectedMaterials', JSON.stringify(selectedMaterials));
                 updateTotalQuantity();
+
+                // Exibe uma mensagem de confirmação
+                alert(`Material "${descricao}" com a quantidade ${quantity} foi confirmado na lista.`);
             } else {
                 alert('Por favor, insira uma quantidade válida.');
             }
@@ -205,6 +214,9 @@
                     }
                     localStorage.setItem('selectedMaterials', JSON.stringify(selectedMaterials));
                     updateTotalQuantity();
+
+                    // Exibe uma mensagem de confirmação
+                    alert(`Material "${descricao}" com a quantidade ${quantity} retirada da lista.`);
                 } else {
                     alert('Faltando a qtde.');
                 }
@@ -231,14 +243,25 @@
             filterMaterials();
         }
 
+        /*
         function updateTotalQuantity() {
             const totalQuantity = Object.values(selectedMaterials).reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('totalAdded').textContent = totalQuantity;
+        }
+        */
+        function updateTotalQuantity() {
+            const totalQuantity = Object.values(selectedMaterials).reduce((total, item) => {
+                // Converte a quantidade para número antes de somar
+                const quantity = parseInt(item.quantity, 10);
+                return total + (isNaN(quantity) ? 0 : quantity);
+            }, 0);
+
             document.getElementById('totalAdded').textContent = totalQuantity;
         }
 
         function finalizeRequest() {
             const matricula = document.getElementById('matricula').value;
-            const funcao = document.getElementById('funcao').value;
+            const grupo = document.getElementById('grupo').value;
             const contract = document.getElementById('contract').value;
 
             if (!matricula) {
@@ -264,14 +287,14 @@
             const pedidoData = {
                 numero_pedido: pedidoNumber,
                 matricula,
-                funcao,
+                grupo,
                 contrato: contract,
                 materiais: selectedMaterials
             };
 
             let pedidoMensagem = `Solicitação de Material #${pedidoData.numero_pedido}\n`;
             pedidoMensagem += `Matrícula: ${pedidoData.matricula}\n`;
-            pedidoMensagem += `Função: ${pedidoData.funcao}\n`;
+            pedidoMensagem += `Grupo: ${pedidoData.grupo}\n`;
             pedidoMensagem += `Contrato: ${pedidoData.contrato}\n`;
             pedidoMensagem += 'Materiais:\n';
             for (const codigo in pedidoData.materiais) {
@@ -293,12 +316,26 @@
             window.open(whatsappUrl, '_blank');
         }
 
+        function validateNumber(input) {
+            const value = input.value;
+
+            // Verifica se o valor contém apenas dígitos
+            if (!/^\d*$/.test(value)) {
+                input.value = value.replace(/\D/g, ''); // Remove todos os caracteres que não são números
+            }
+        }
+
         function zerarContador() {
             selectedMaterials = {};
             localStorage.setItem('selectedMaterials', JSON.stringify(selectedMaterials));
             updateTotalQuantity();
         }
 
+        // Carregar materiais ao abrir a página
+        loadMaterials();
+
+
+        /*
         function openAddInfoFrame() {
             document.getElementById('addInfoFrame').style.display = 'block';
         }
@@ -333,6 +370,7 @@
                 alert('Câmera não disponível no seu dispositivo.');
             }
         }
+        */
     </script>
 </body>
 </html>

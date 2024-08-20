@@ -24,14 +24,6 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-.button-info {
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
 .header-frame .form-row {
     display: flex;
     justify-content: space-between;
@@ -69,8 +61,34 @@ h1, h2 {
     flex: 1;
 }
 
+/* Alteração para o componente qtd-input */
+.qtd-input {
+    /* Remove as setas de spin */
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* Estilos personalizados */
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.qtd-input:focus {
+    border-color: #4CAF50; /* Muda a cor da borda quando o campo é focado */
+    outline: none;
+}
+
+/* Remove as setas para navegadores que não respeitam o 'appearance' */
+.qtd-input::-webkit-outer-spin-button,
+.qtd-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .material-item input {
-    width: 60px;
     margin-right: 10px;
 }
 
@@ -78,28 +96,30 @@ h1, h2 {
     margin-left: 5px;
 }
 
-.material-item .button-add {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+/* Botões com imagens */
+.button-add, .button-remove, .button-info {
+    border: none; /* Remove a borda do botão */
+    background: none; /* Remove o fundo do botão */
+    padding: 0; /* Remove o padding */
+    margin: 0; /* Remove a margem, se houver */
+    cursor: pointer; /* Adiciona o cursor de ponteiro */
 }
 
-.material-item .button-remove {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+/* Imagens dentro dos botões */
+.button-add img, .button-remove img, .button-info i {
+    display: block; /* Remove espaço extra abaixo da imagem */
+    width: 24px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
 }
 
-.material-item .button-photo {
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+/* Efeito ao passar o mouse */
+.button-add:hover img, .button-remove:hover img {
+    opacity: 0.8; /* Efeito visual ao passar o mouse */
+}
+
+/* Remove o contorno de foco padrão (opcional) */
+.button-add:focus, .button-remove:focus, .button-info:focus {
+    outline: none; /* Remove a borda de foco padrão */
 }
 
 .actions {
@@ -134,6 +154,7 @@ h1, h2 {
     padding: 10px;
     background-color: #f1f1f1;
 }
+
 .tab-button {
     flex: 1;
     padding: 10px;
@@ -142,11 +163,13 @@ h1, h2 {
     border: 1px solid #ccc;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
- }
+}
+
 .tab-button.active {
     background-color: white;
     border-bottom: 1px solid white;
 }
+
 .tab-content {
     display: none;
     padding: 20px;
@@ -154,6 +177,7 @@ h1, h2 {
     border-top: none;
     border-radius: 0 0 5px 5px;
 }
+
 .tab-content.active {
     display: block;
 }
@@ -162,4 +186,17 @@ h1, h2 {
     width: 70%; /* ou ajuste o valor conforme necessário */
     padding: 10px;
     font-size: 16px;
+}
+
+/* Estilo para o totalizador */
+.total-quantity {
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 50px; /* Ajuste conforme necessário */
+    text-align: center;
 }
