@@ -25,7 +25,7 @@ function loadMateriais() {
         if (grupo === 'epi') {
             fileName = 'liganova_epi.json';
         }else if (grupo === 'epc') {
-           fileName = 'Lganova_epc.json';
+           fileName = 'liganova_epc.json';
         }
     }
 
