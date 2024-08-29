@@ -23,9 +23,9 @@ function loadMateriais() {
         }
     } else if (contract === 'ligacao_nova') {
         if (grupo === 'epi') {
-            fileName = 'liganov_epi.json';
+            fileName = 'liganova_epi.json';
         }else if (grupo === 'epc') {
-           fileName = 'Lganov_epc.json';
+           fileName = 'Lganova_epc.json';
         }
     }
 
