@@ -27,6 +27,12 @@ function loadMateriais() {
         }else if (grupo === 'epc') {
            fileName = 'liganova_epc.json';
         }
+    } else if (contract === 'fiscalizacao') {
+        if (grupo === 'epi') {
+            fileName = 'fiscal_epi.json';
+        }else if (grupo === 'epc') {
+           fileName = 'fiscal_epc.json';
+        }        
     }
 
     fetch(fileName)
