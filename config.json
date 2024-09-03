@@ -1,0 +1,14 @@
+{
+    "corte": {
+        "epi": "corte_epi.json",
+        "epc": "corte_epc.json"
+    },
+    "ligacao_nova": {
+        "epi": "liganova_epi.json",
+        "epc": "liganova_epc.json"
+    },
+    "fiscalizacao": {
+        "epi": "fiscal_epi.json",
+        "epc": "fiscal_epc.json"
+    }
+}
