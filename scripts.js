@@ -23,11 +23,34 @@ async function getFileNameJson(contract, grupo) {
     }
 }
 
+async function loadMateriais() {
+    const contract = document.getElementById('contract').value;
+    const grupo = document.getElementById('grupo').value.toLowerCase();
+
+    try {
+        const fileName = await getFileNameJson(contract, grupo);
+        
+        if (fileName) {
+            const response = await fetch(fileName);
+            if (!response.ok) {
+                throw new Error('Erro ao carregar o arquivo JSON.');
+            }
+            const data = await response.json();
+            materials = data; // Supondo que 'materials' é uma variável global
+            filterMateriais(); // Certifique-se de que essa função está definida e faz o que é necessário
+        } else {
+            console.error('Nome do arquivo não encontrado.');
+        }
+    } catch (error) {
+        console.error('Erro ao carregar materiais:', error);
+    }
+}
+/*
 function loadMateriais() {
     const contract = document.getElementById('contract').value;
     const grupo = document.getElementById('grupo').value.toLowerCase();
     let fileName = '';
-    /*
+    
     if (grupo === 'epi') {
         if (contract === 'corte') {
             fileName = 'corte_epi.json';
@@ -49,7 +72,7 @@ function loadMateriais() {
            fileName = 'fiscal_epc.json';
         }        
     }
-    */
+    
     getFileName(contract, grupo).then(fileName => {
     if (fileName) {
         fetch(fileName)
@@ -63,6 +86,7 @@ function loadMateriais() {
             });
     }
 }
+*/
 
 function displayMateriais(filteredMateriais) {
     const materialList = document.getElementById('materialList');
