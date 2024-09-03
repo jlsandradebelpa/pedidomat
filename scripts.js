@@ -151,12 +151,21 @@ function removeMaterial(codigo) {
 }
 
 function filterMateriais() {
+    const searchValue = document.getElementById('search').value;
+    const filteredMateriais = materials.filter(material => 
+        material.descricao.includes(searchValue)
+    );
+    displayMateriais(filteredMateriais);
+}
+/*
+function filterMateriais() {
     const searchValue = document.getElementById('search').value.toUpperCase();
     const filteredMateriais = materials.filter(material => 
         material.descricao.toUpperCase().includes(searchValue)
     );
     displayMateriais(filteredMateriais);
 }
+*/
 
 function convertToUppercase() {
     const searchInput = document.getElementById('search');
