@@ -7,16 +7,31 @@ function openTab(tabName) {
     document.getElementById(tabName).style.display = 'block';
 }
 
+async function getFileNameJson(contract, grupo) {
+    try {
+        const response = await fetch('config.json');
+        const config = await response.json();
+        
+        if (config[contract] && config[contract][grupo]) {
+            return config[contract][grupo];
+        } else {
+            throw new Error('Combinação de contrato e grupo não encontrada.');
+        }
+    } catch (error) {
+        console.error('Erro ao obter o nome do arquivo:', error);
+        return null;
+    }
+}
+
 function loadMateriais() {
     const contract = document.getElementById('contract').value;
     const grupo = document.getElementById('grupo').value.toLowerCase();
-
-    //const fileName = contract === 'linha_viva' ? 'linha_viva.json' : 'linha_morta.json';
     let fileName = '';
-
-    if (contract === 'corte') {
-        if (grupo === 'epi') {
+    /*
+    if (grupo === 'epi') {
+        if (contract === 'corte') {
             fileName = 'corte_epi.json';
+        
         }else if (grupo === 'epc') {
             fileName = 'corte_epc.json';
 
@@ -34,16 +49,19 @@ function loadMateriais() {
            fileName = 'fiscal_epc.json';
         }        
     }
-
-    fetch(fileName)
-        .then(response => response.json())
-        .then(data => {
-            materials = data;
-            filterMateriais();
-        })
-        .catch(error => {
-            console.error('Erro ao carregar o arquivo JSON:', error);
-        });
+    */
+    getFileName(contract, grupo).then(fileName => {
+    if (fileName) {
+        fetch(fileName)
+            .then(response => response.json())
+            .then(data => {
+                materials = data;
+                filterMateriais();
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o arquivo JSON:', error);
+            });
+    }
 }
 
 function displayMateriais(filteredMateriais) {
