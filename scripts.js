@@ -1,10 +1,33 @@
 let materials = [];
 let selectedMateriais = JSON.parse(localStorage.getItem('selectedMateriais')) || {};
 let pedidoCounter = 1;
-
+/*
 function openTab(tabName) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
     document.getElementById(tabName).style.display = 'block';
+}
+*/
+
+function openTab(tabName) {
+    // Esconder todo o conteúdo das abas
+    document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+    
+    // Exibir a aba selecionada
+    document.getElementById(tabName).style.display = 'block';
+    
+    // Verificar se a aba 'materiaisTab' foi selecionada
+    if (tabName === 'materiaisTab') {
+        // Verificar se o campo 'contract' e 'grupo' têm valor
+        const contract = document.getElementById('contract').value;
+        const grupo = document.getElementById('grupo').value;
+        
+        if (contract && contract.trim() !== '' && grupo && grupo.trim() !== '') {
+            // Chamar a função loadMateriais() se ambos os campos tiverem conteúdo
+            loadMateriais();
+        } else {
+            console.log('Por favor, selecione um contrato e um grupo antes de carregar os materiais.');
+        }
+    }
 }
 
 async function getFileNameJson(contract, grupo) {
@@ -93,7 +116,10 @@ function displayMateriais(filteredMateriais) {
     materialList.innerHTML = '';
     filteredMateriais.forEach(material => {
         let div = document.createElement('div');
-        let descricaoTruncada = material.descricao.substring(0, 54);
+        //let descricaoTruncada = material.descricao.substring(0, 54);
+        let descricaoTruncada = material.descricao && material.descricao.trim() !== "" 
+            ? material.descricao.substring(0, 54) 
+            : "";
         div.classList.add('material-item');
         div.innerHTML = `
             <span class="material-item">${material.codigo} - ${descricaoTruncada}</span>
@@ -150,6 +176,28 @@ function removeMaterial(codigo) {
     }
 }
 
+// Função para filtrar os materiais com base no campo de pesquisa
+function filterMateriais() {
+    // Pegar o valor do campo 'search'
+    const searchValue = document.getElementById('search').value;
+
+    // Verificar se o searchValue é vazio ou nulo
+    if (!searchValue || searchValue.trim() === "") {
+        // Se for vazio ou nulo, exibir todos os materiais
+        displayMateriais(materials);
+        return; // Não continuar com a filtragem
+    }
+
+    // Se searchValue tiver valor, filtrar materiais (ignorando maiúsculas e minúsculas)
+    const filteredMateriais = materials.filter(material => 
+        material.descricao.toLowerCase().includes(searchValue.toLowerCase())
+    );
+
+    // Exibir os materiais filtrados
+    displayMateriais(filteredMateriais);
+}
+
+/*
 function filterMateriais() {
     const searchValue = document.getElementById('search').value;
     const filteredMateriais = materials.filter(material => 
@@ -157,6 +205,7 @@ function filterMateriais() {
     );
     displayMateriais(filteredMateriais);
 }
+*/
 /*
 function filterMateriais() {
     const searchValue = document.getElementById('search').value.toUpperCase();
