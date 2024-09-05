@@ -13,6 +13,6 @@
     },
         "plantao": {
         "epi": "plantao_epi.json",
-        "epc": "plantap_epc.json"
+        "epc": "plantao_epc.json"
     }
 }
