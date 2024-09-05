@@ -10,5 +10,9 @@
     "fiscalizacao": {
         "epi": "fiscal_epi.json",
         "epc": "fiscal_epc.json"
+    },
+        "plantao": {
+        "epi": "plantao_epi.json",
+        "epc": "plantap_epc.json"
     }
 }
