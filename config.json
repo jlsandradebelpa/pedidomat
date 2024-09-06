@@ -11,8 +11,24 @@
         "epi": "fiscal_epi.json",
         "epc": "fiscal_epc.json"
     },
-        "plantao": {
+    "plantao": {
         "epi": "plantao_epi.json",
         "epc": "plantao_epc.json"
-    }
+    },    
+    "linhaviva": {
+        "epi": "linhaviva_epi.json",
+        "epc": "linhaviva_epc.json"
+    },
+    "linhamorta": {
+        "epi": "linhamorta_epi.json",
+        "epc": "linhamorta_epc.json"
+    },
+    "podalinhaviva": {
+        "epi": "linhaviva_epi.json",
+        "epc": "linhaviva_epc.json"
+    },
+    "podalinhamorta": {
+        "epi": "podalinhamorta_epi.json",
+        "epc": "podalinhamorta_epc.json"
+    }    
 }
