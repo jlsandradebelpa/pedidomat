@@ -1,0 +1,562 @@
+[
+  {
+    "codigo": "02560554",
+    "descricao": "ALAVANCA A1045 1 2M PONTA-RETA"
+  },
+  {
+    "codigo": "02550246",
+    "descricao": "ALICATE AMPERIMETRO DIGITAL 20-1000A"
+  },
+  {
+    "codigo": "01320246",
+    "descricao": "ALICATE BICO MCANA BICO CT RT 6 NBR-1KV"
+  },
+  {
+    "codigo": "01320271",
+    "descricao": "ALICATE BOMBA DAGUA 12 POL 70MM VDE-1KV"
+  },
+  {
+    "codigo": "01320529",
+    "descricao": "ALICATE COMPRESSAO HIDRAULICA Y35 COM MATRIZES"
+  },
+  {
+    "codigo": "02560384",
+    "descricao": "ALICATE COMPRESSAO MECANICO MD-6"
+  },
+  {
+    "codigo": "02560342",
+    "descricao": "ALICATE CORTE DIAG-AMER 152.4MM NBR-1KV"
+  },
+  {
+    "codigo": "01320063",
+    "descricao": "ALICATE UNIVERSAL"
+  },
+  {
+    "codigo": "01320082",
+    "descricao": "ARCO SERRA ISOLADO"
+  },
+  {
+    "codigo": "01300162",
+    "descricao": "ATERRAMENTO SECUNDARIO CABO MULTIPLEXADO C/ BOLSA"
+  },
+  {
+    "codigo": "01300049",
+    "descricao": "BAINHA FACAO COU SINT NT 20"
+  },
+  {
+    "codigo": "01300180",
+    "descricao": "BALDE FER-GER 350X300MM"
+  },
+  {
+    "codigo": "01300024",
+    "descricao": "BANDEIROLA SINALIZACAO 0.3X0.4M"
+  },
+  {
+    "codigo": "01300118",
+    "descricao": "BANQUETA ISOLANTE 40KV COM PISO ANTDERRAPANTE DIM.495 X 495MM E ALT.312MM FLV12564-1"
+  },
+  {
+    "codigo": "01300130",
+    "descricao": "BASTAO PEGA TUDO ISOLADO 3.90 MTS COM BOLSA"
+  },
+  {
+    "codigo": "01300447",
+    "descricao": "BASTAO PODA FBV 32X1250MM"
+  },
+  {
+    "codigo": "02550303",
+    "descricao": "BATERIA 9V"
+  },
+  {
+    "codigo": "01320613",
+    "descricao": "BOLSA BASTAO PEGA TUDO"
+  },
+  {
+    "codigo": "01300412",
+    "descricao": "BOLSA ELO FUSIVEL 840X920MM"
+  },
+  {
+    "codigo": "01300043",
+    "descricao": "BOLSA EPI PORTA CADEADO 520X210X360MM"
+  },
+  {
+    "codigo": "01300184",
+    "descricao": "BOLSA VARA MANOBRA"
+  },
+  {
+    "codigo": "02550185",
+    "descricao": "BROCA ACO RAPIDO 5.5MM"
+  },
+  {
+    "codigo": "01320404",
+    "descricao": "BROCA CONC PAR 6MM DIN 8039"
+  },
+  {
+    "codigo": "02550174",
+    "descricao": "BROCA CONC PAR 8MM DIN 8039"
+  },
+  {
+    "codigo": "01300085",
+    "descricao": "CABECOTE VARA MANOBRA UNIV AI 90o."
+  },
+  {
+    "codigo": "01300062",
+    "descricao": "CABECOTE VARA MANOBRA UNIV BZ 25"
+  },
+  {
+    "codigo": "01320469",
+    "descricao": "CAIXA SANF FER-GER 500X200X165MM"
+  },
+  {
+    "codigo": "02560361",
+    "descricao": "CALCO PARA SAPATA DE GUINCHO"
+  },
+  {
+    "codigo": "02560354",
+    "descricao": "CALCO RODA VEIC AL TRI 260X200X370MM"
+  },
+  {
+    "codigo": "01320046",
+    "descricao": "CANIVETE"
+  },
+  {
+    "codigo": "00524784",
+    "descricao": "CARRETILHA AL P/ ICAR 454 KGF C/ TRAVA"
+  },
+  {
+    "codigo": "01320032",
+    "descricao": "CARRO DE MAO"
+  },
+  {
+    "codigo": "02510732",
+    "descricao": "CAVADEIRA ART 196X166MM MAD 2.80 M"
+  },
+  {
+    "codigo": "01320216",
+    "descricao": "CHAVE AJUSTAVEL 10 VDE-1KV"
+  },
+  {
+    "codigo": "01320240",
+    "descricao": "CHAVE AJUSTAVEL 12 VDE-1KV"
+  },
+  {
+    "codigo": "01321369",
+    "descricao": "CHAVE ALLEN TIPO T ISOLADA 9/16"
+  },
+  {
+    "codigo": "01321396",
+    "descricao": "CHAVE BOCA ISOLADA 17"
+  },
+  {
+    "codigo": "01321397",
+    "descricao": "CHAVE BOCA ISOLADA 19"
+  },
+  {
+    "codigo": "01321399",
+    "descricao": "CHAVE BOCA ISOLADA 22"
+  },
+  {
+    "codigo": "01320217",
+    "descricao": "CHAVE FENDA 6.6MM X 150MM"
+  },
+  {
+    "codigo": "01320357",
+    "descricao": "CHAVE FENDA SIMP NBR-1KV 4.5X100MM"
+  },
+  {
+    "codigo": "01321506",
+    "descricao": "CHAVE FENDA SIMP NBR-1KV 8 X 150 MM"
+  },
+  {
+    "codigo": "01310172",
+    "descricao": "CHAVE GRIFO ADAPTADA 14 POL (RETIRAR CONECTOR A COMPRESSAO)"
+  },
+  {
+    "codigo": "01320386",
+    "descricao": "CHAVE IMPACTO PISTOLA PNEUMATICA 3/4"
+  },
+  {
+    "codigo": "02560542",
+    "descricao": "CHAVE PHILIPS COTOC NBR-1KV 3/16X6"
+  },
+  {
+    "codigo": "02560072",
+    "descricao": "CHAVE PHILLIPS ISOLADA 3MM X 150MM (1/8 POL X 6 POL)"
+  },
+  {
+    "codigo": "01320305",
+    "descricao": "CHAVE PHILLIPS ISOLADA 6MM X 200MM (1/4 POL X 8 POL)"
+  },
+  {
+    "codigo": "02566092",
+    "descricao": "CINTA AMARRACAO PES 0.05X4.5M LJ 0.8TO"
+  },
+  {
+    "codigo": "02550494",
+    "descricao": "CINTA AMARRACAO PES 0.05X9M LJ 2.5TO"
+  },
+  {
+    "codigo": "01300037",
+    "descricao": "CINTA DE ANCORAGEM BASE POSTE COM MOSQUETAO OVAL"
+  },
+  {
+    "codigo": "02550638",
+    "descricao": "CINTA TUBULAR 1.5 METROS"
+  },
+  {
+    "codigo": "02550639",
+    "descricao": "CINTA TUBULAR 2 METROS"
+  },
+  {
+    "codigo": "01300127",
+    "descricao": "CJ ATERRAMENTO TEMP REDE SEC 13.8KV"
+  },
+  {
+    "codigo": "01300370",
+    "descricao": "CJ ATERRAMENTO TEMP VEIC 34.5KV"
+  },
+  {
+    "codigo": "01320090",
+    "descricao": "COLHER PEDREIRO TRI RD N10 CB MAD"
+  },
+  {
+    "codigo": "01300243",
+    "descricao": "CONE FLEX PE LJ-BR 0.75M 2 FAIXAS REFL"
+  },
+  {
+    "codigo": "01300088",
+    "descricao": "CONJUNTO ATERRAM. RAP. E TEMPOR.C/BASTAO TELESC.P/LINHA ATE 34.5KV FG-457 C/ BOLSA"
+  },
+  {
+    "codigo": "01300048",
+    "descricao": "CORDA TRANC EST PA 12MM BR/AZ"
+  },
+  {
+    "codigo": "01300053",
+    "descricao": "CORDA TRANC EST PES 10MM BR"
+  },
+  {
+    "codigo": "01300012",
+    "descricao": "CORDA TRANC EST PP 12MM BR LINHA DE VIDA"
+  },
+  {
+    "codigo": "02550087",
+    "descricao": "DESCASCADOR DE ISOLAMENTO DE CABO XLPE"
+  },
+  {
+    "codigo": "01300515",
+    "descricao": "DESCENSOR P/CORDA 12 MM AUTO BLOCANTE"
+  },
+  {
+    "codigo": "01300410",
+    "descricao": "DESTORCEDOR DE POSTE"
+  },
+  {
+    "codigo": "02503385",
+    "descricao": "DETECTOR DE TENSAO DE 1KV A 138KV"
+  },
+  {
+    "codigo": "02550080",
+    "descricao": "DETECTOR DE TENSAO POR APROXIMACAO  100 A 15KV"
+  },
+  {
+    "codigo": "01321316",
+    "descricao": "DINAMOMETRO 160KG FD/10 SAFETY (KIT PONTALETE)"
+  },
+  {
+    "codigo": "01300304",
+    "descricao": "DISPOSITIVO ANTIQUEDA DE CARTUCHO AQDC"
+  },
+  {
+    "codigo": "01320075",
+    "descricao": "ENXADA CATAR A1060 RED 274X191MM CB MAD"
+  },
+  {
+    "codigo": "01321359",
+    "descricao": "ENXADECO S/CABO DE MADEIRA"
+  },
+  {
+    "codigo": "01300206",
+    "descricao": "ESCADA EXT FBV/AL 4.50 X 7.80 MT"
+  },
+  {
+    "codigo": "01300211",
+    "descricao": "ESCADA EXT FBV/AL 5.40 X 9.60 MT"
+  },
+  {
+    "codigo": "01300474",
+    "descricao": "ESCADA EXT FBV/AL 7.20 X 12.00 MT"
+  },
+  {
+    "codigo": "01300207",
+    "descricao": "ESCADA SING CON FBV/AL 3.00 MT"
+  },
+  {
+    "codigo": "01300214",
+    "descricao": "ESCADA SING CON FBV/AL 4.60 MT"
+  },
+  {
+    "codigo": "01320508",
+    "descricao": "ESCOVA ACO ENCAIXE UNIVERSAL P/ LIMPEZA TIPO V"
+  },
+  {
+    "codigo": "01320934",
+    "descricao": "ESTICADOR CONDUTOR 0A 2.03 MM - 5.08 MM"
+  },
+  {
+    "codigo": "01320563",
+    "descricao": "ESTICADOR CONDUTOR 1A 5.08 MM - 10.16 MM"
+  },
+  {
+    "codigo": "01320920",
+    "descricao": "ESTICADOR CONDUTOR 2A 7.08 MM - 13.87 MM"
+  },
+  {
+    "codigo": "01320577",
+    "descricao": "ESTICADOR CONDUTOR 3A 13.46 MM -18.80 MM"
+  },
+  {
+    "codigo": "02560435",
+    "descricao": "ESTICADOR CONDUTOR 4A 19.80 MM - 22.35 MM"
+  },
+  {
+    "codigo": "01320555",
+    "descricao": "ESTICADOR SOLA"
+  },
+  {
+    "codigo": "01320590",
+    "descricao": "ESTROPO DE ACO"
+  },
+  {
+    "codigo": "01320560",
+    "descricao": "ESTROPO DE NYLON   800MM COM ARGOLA  ACO"
+  },
+  {
+    "codigo": "01320558",
+    "descricao": "ESTROPO DE NYLON 1200MM COM ARGOLA"
+  },
+  {
+    "codigo": "01320066",
+    "descricao": "FACAO (TERCADO) PARA MATO CABO DE MADEIRA   NO 20"
+  },
+  {
+    "codigo": "00522897",
+    "descricao": "FAROL AUXILIAR (SELUBIM) 12V C/ EXTENSAO USO EXTERNO"
+  },
+  {
+    "codigo": "01300089",
+    "descricao": "FERRAMENTA LOADBUSTER TENSAO NOMINAL 14.4 / 25.5 kV / DISPOSITIVO ABERTURA DE CHAVE"
+  },
+  {
+    "codigo": "01320051",
+    "descricao": "FERRAMENTA LOADBUSTER TENSAO NOMINAL 34.5 kV / DISPOSITIVO ABERTURA DE CHAVE"
+  },
+  {
+    "codigo": "01300542",
+    "descricao": "FITA EUREKA PARA SUPORTE DE ESCADA 22KN 2 PONTAS"
+  },
+  {
+    "codigo": "01300245",
+    "descricao": "FITA SINAL REFLETIVA 5X2000CM LJ"
+  },
+  {
+    "codigo": "01320067",
+    "descricao": "FOICE ROCADEIRA AC 295X115MM C/ CABO"
+  },
+  {
+    "codigo": "01320381",
+    "descricao": "FURADEIRA C/IMP 2900RPM 127V 600W"
+  },
+  {
+    "codigo": "01300230",
+    "descricao": "GANCHO ICAMENTO"
+  },
+  {
+    "codigo": "02560216",
+    "descricao": "GARRA P/ CORDOALHA DE ACO 318 A 12.7 MM"
+  },
+  {
+    "codigo": "01300269",
+    "descricao": "GARRAFA TERMICA 12L PL AZE AMP VD"
+  },
+  {
+    "codigo": "00529181",
+    "descricao": "GIROFLEX"
+  },
+  {
+    "codigo": "02503306",
+    "descricao": "GUINCHO ALAVANCA 45:1 1500KG"
+  },
+  {
+    "codigo": "01320561",
+    "descricao": "GUINCHO PORTATIL COM CABO DE ACO 2000KG FG-156/2000"
+  },
+  {
+    "codigo": "02503557",
+    "descricao": "JOGO DE TARRACHA TUBO PVC DE 1/2 POL A 1 POL (1/2 POL . 3/4 POL . 1 POL)"
+  },
+  {
+    "codigo": "01320428",
+    "descricao": "LAMINA SERRA HSS-BM 18Z/ 12X1/2X0.024"
+  },
+  {
+    "codigo": "02501200",
+    "descricao": "LANTERNA ALCA INTEGR PL PT HALOG REC BIV"
+  },
+  {
+    "codigo": "01300276",
+    "descricao": "LENCOL NR 2MM 60SHA LISA LJ 0.3X0.9M"
+  },
+  {
+    "codigo": "01320422",
+    "descricao": "LIMA CH BASTARDA SP 203.2MM"
+  },
+  {
+    "codigo": "00526032",
+    "descricao": "LONA PVC 0.3MM 6X5M PT/LJ"
+  },
+  {
+    "codigo": "01310373",
+    "descricao": "LUVA DE COBERTURA"
+  },
+  {
+    "codigo": "01310157",
+    "descricao": "LUVA ISOLANTE CLASSE 2"
+  },
+  {
+    "codigo": "01310158",
+    "descricao": "LUVA ISOLANTE CLASSE 4"
+  },
+  {
+    "codigo": "01300050",
+    "descricao": "MACACAO APICULTOR"
+  },
+  {
+    "codigo": "01300256",
+    "descricao": "MALETA PRIMEIRO SOCORRO PLA BR"
+  },
+  {
+    "codigo": "01320562",
+    "descricao": "MAQUINA (FERRAMENTA) AMPACT CUNHAR CONECTORES. UNIVERSAL"
+  },
+  {
+    "codigo": "01320537",
+    "descricao": "MAQUINA CINTAR APERTO/CORTE FITA DE ACO MARCA FUSIMEC No.3"
+  },
+  {
+    "codigo": "01320055",
+    "descricao": "MARRETA 2KG COM CABO"
+  },
+  {
+    "codigo": "01300535",
+    "descricao": "MINI DETECTOR DE TENSAO POR CONTATO 50V A 600V"
+  },
+  {
+    "codigo": "01300321",
+    "descricao": "MOITAO TRIPLO PLT 3 R"
+  },
+  {
+    "codigo": "01320485",
+    "descricao": "MORSA GRANDE"
+  },
+  {
+    "codigo": "01310573",
+    "descricao": "MOSQUETAO OV AL TRP AUT 25KN"
+  },
+  {
+    "codigo": "01320101",
+    "descricao": "PA BICO AC 300X235MM MAD 710MM"
+  },
+  {
+    "codigo": "02510833",
+    "descricao": "PE DE CABRA"
+  },
+  {
+    "codigo": "02550036",
+    "descricao": "PERFURATRIZ HIDRAULICA SOLO C/ REDUTOR PK35 MANGOTE. CONEXOES E BROCA 600 X 2000MM"
+  },
+  {
+    "codigo": "01321179",
+    "descricao": "PICARETA"
+  },
+  {
+    "codigo": "01300279",
+    "descricao": "PLACA QD SINALIZACAO HOMENS TRABALHANDO PVC 24X32CM"
+  },
+  {
+    "codigo": "00525809",
+    "descricao": "PLACA QD SINALIZACAO NAO OPERE ESTE EQUIPAMENTO PVC 24X32CM"
+  },
+  {
+    "codigo": "01300520",
+    "descricao": "PLACA QD SINALIZACAO PASSAGEM DE PEDESTRE PVC 24X32CM"
+  },
+  {
+    "codigo": "02560367",
+    "descricao": "PRUMO PAREDE A1020 CR 400G PA"
+  },
+  {
+    "codigo": "01320906",
+    "descricao": "REBITADOR ALAV POP 1P 1/8 - 3/16"
+  },
+  {
+    "codigo": "02560433",
+    "descricao": "ROLDANA DE ALUM�NIO PARA LAN�AMENTO CABO 1200KG"
+  },
+  {
+    "codigo": "01320444",
+    "descricao": "SERRA COPO 1.1/2 HSS-BM 38MM VAR"
+  },
+  {
+    "codigo": "02550124",
+    "descricao": "SERRA COPO 1.1/4 HSS-BM 32MM VAR"
+  },
+  {
+    "codigo": "01320510",
+    "descricao": "SOCADOR AC 2700MM"
+  },
+  {
+    "codigo": "01320483",
+    "descricao": "SOQUETE JG 22PC ACV S/ISOL"
+  },
+  {
+    "codigo": "01320968",
+    "descricao": "SUPORTE SERRA COPO CIL HSS 14 - 30MM 1/4"
+  },
+  {
+    "codigo": "01320093",
+    "descricao": "TALHADEIRA SXT ACV 16X150MM S/EMP"
+  },
+  {
+    "codigo": "02550248",
+    "descricao": "TERROMETRO"
+  },
+  {
+    "codigo": "02500126",
+    "descricao": "TESOURAO ISOLADO 38 X 2.000 MM CABO 336.8 CAA L.T. 30"
+  },
+  {
+    "codigo": "01300193",
+    "descricao": "TESOURAO ISOLADO PARA CABO 1/0 CAA 24 POL FLV02818-1"
+  },
+  {
+    "codigo": "01300138",
+    "descricao": "TESTADOR FASE (FASE TESTER) 46 KV RH1876"
+  },
+  {
+    "codigo": "01300129",
+    "descricao": "TESTADOR FASE 16 KV"
+  },
+  {
+    "codigo": "01320293",
+    "descricao": "TORQUIMETRO ESTALO 1/2 25X50-13 ROBUST"
+  },
+  {
+    "codigo": "02560382",
+    "descricao": "TRENA FITA MANIVELA FBV 13MM 50M"
+  },
+  {
+    "codigo": "01300068",
+    "descricao": "VARA MANOBRA EM FIBRA DE VIDRO 38MM 5 ELEMENTOS C/ CABECOTE P/ MANOBRA DE CHAVES NR-10 C/ BOLSA"
+  }
+]
