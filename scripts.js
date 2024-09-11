@@ -1,6 +1,10 @@
+// Limpar o localStorage ao carregar a página para evitar conflitos
+// Inicialização das variáveis
 let materials = [];
-let selectedMateriais = JSON.parse(localStorage.getItem('selectedMateriais')) || {};
+let selectedMateriais = JSON.parse(sessionStorage.getItem('selectedMateriais')) || {};
+localStorage.removeItem('selectedMateriais'); // Agora está após a inicialização
 let pedidoCounter = 1;
+
 /*
 function openTab(tabName) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
@@ -29,6 +33,7 @@ function openTab(tabName) {
         }
     }
 }
+
 
 async function getFileNameJson(contract, grupo) {
     try {
@@ -116,10 +121,13 @@ function displayMateriais(filteredMateriais) {
     materialList.innerHTML = '';
     filteredMateriais.forEach(material => {
         let div = document.createElement('div');
+        
         //let descricaoTruncada = material.descricao.substring(0, 54);
+
         let descricaoTruncada = material.descricao && material.descricao.trim() !== "" 
             ? material.descricao.substring(0, 54) 
             : "";
+        
         div.classList.add('material-item');
         div.innerHTML = `
             <span class="material-item">${material.codigo} - ${descricaoTruncada}</span>
@@ -142,7 +150,8 @@ function addMaterial(codigo, descricao) {
             selectedMateriais[codigo] = { descricao, quantity };
         }
 
-        localStorage.setItem('selectedMateriais', JSON.stringify(selectedMateriais));
+        //localStorage.setItem('selectedMateriais', JSON.stringify(selectedMateriais));
+        sessionStorage.setItem('selectedMateriais', JSON.stringify(selectedMateriais));
         updateTotalQuantity();
 
         // Exibe uma mensagem de confirmação
@@ -199,15 +208,6 @@ function filterMateriais() {
 
 /*
 function filterMateriais() {
-    const searchValue = document.getElementById('search').value;
-    const filteredMateriais = materials.filter(material => 
-        material.descricao.includes(searchValue)
-    );
-    displayMateriais(filteredMateriais);
-}
-*/
-/*
-function filterMateriais() {
     const searchValue = document.getElementById('search').value.toUpperCase();
     const filteredMateriais = materials.filter(material => 
         material.descricao.toUpperCase().includes(searchValue)
@@ -232,6 +232,7 @@ function updateTotalQuantity() {
     document.getElementById('totalAdded').textContent = totalQuantity;
 }
 */
+/*
 function updateTotalQuantity() {
     const totalQuantity = Object.values(selectedMateriais).reduce((total, item) => {
         // Converte a quantidade para número antes de somar
@@ -241,6 +242,20 @@ function updateTotalQuantity() {
 
     document.getElementById('totalAdded').textContent = totalQuantity;
 }
+*/
+
+function updateTotalQuantity() {
+    const totalQuantity = Object.values(selectedMateriais).reduce((total, item) => {
+        const quantity = parseInt(item.quantity, 10);
+        return total + (isNaN(quantity) ? 0 : quantity);
+    }, 0);
+
+    document.getElementById('totalAdded').textContent = totalQuantity;
+
+    // Retorna o total da quantidade
+    return totalQuantity;
+}
+
 
 function finalizeRequest() {
     const matricula = document.getElementById('matricula').value;
@@ -257,6 +272,15 @@ function finalizeRequest() {
         alert('Nenhum material foi selecionado ou matrícula não informada.');
         return;
     }
+
+    // Chama a função e armazena o valor retornado
+    const total = updateTotalQuantity();
+
+    // Testa se o valor é maior que 0
+    if (total <= 0) {
+        alert('Nenhum material foi selecionado ou matrícula não informada.');
+        return;
+    }    
 
     const now = new Date();
     const timestamp = now.getFullYear().toString() +
@@ -285,18 +309,55 @@ function finalizeRequest() {
         pedidoMensagem += `- ${item.descricao}: ${item.quantity} unidade(s)\n`;
     }
 
+    // Obtém o botão pelo ID
+    const limparSelecaoButton = document.getElementById('limparSelecao');
+    // Verifica se o botão foi encontrado
+    if (limparSelecaoButton) {
+        // Simula o clique no botão
+        limparSelecaoButton.click();
+    }
+
+    localStorage.removeItem('selectedMateriais');
+    sessionStorage.removeItem('selectedMateriais');  
+    sessionStorage.setItem('selectedMateriais', JSON.stringify(selectedMateriais));
+    selectedMateriais = {}; // Limpa o objeto local
+    updateTotalQuantity();
+    zerarContador(); // Limpa selectedMateriais para duplicar    
+    filterMateriais(); // Atualiza a exibição de materiais
+    
     const encodedMessage = encodeURIComponent(pedidoMensagem);
     const whatsappNumber = '5591992069559';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
+    /*
     const pedidoBlob = new Blob([JSON.stringify(pedidoData, null, 2)], { type: 'application/json' });
     const pedidoUrl = URL.createObjectURL(pedidoBlob);
     const downloadLink = document.createElement('a');
     downloadLink.href = pedidoUrl;
     downloadLink.download = fileName;
     downloadLink.click();
+    */
 
     window.open(whatsappUrl, '_blank');
+
+    //Redirecionar para o menu principal (index.html)
+    window.location.href = 'agradecimento.html';
+    window.close()
+}
+
+function zerarContador() {
+    // Verificar se 'selectedMateriais' está no localStorage
+    if (localStorage.getItem('selectedMateriais')) {
+        localStorage.removeItem('selectedMateriais');
+    }
+    
+    // Verificar se 'selectedMateriais' está no sessionStorage
+    if (sessionStorage.getItem('selectedMateriais')) {
+        sessionStorage.removeItem('selectedMateriais');
+    }    
+    sessionStorage.setItem('selectedMateriais', JSON.stringify(selectedMateriais));
+    selectedMateriais = {}; // Também limpa o objeto local
+    updateTotalQuantity();
 }
 
 function validateNumber(input) {
@@ -306,12 +367,6 @@ function validateNumber(input) {
     if (!/^\d*$/.test(value)) {
         input.value = value.replace(/\D/g, ''); // Remove todos os caracteres que não são números
     }
-}
-
-function zerarContador() {
-    selectedMateriais = {};
-    localStorage.setItem('selectedMateriais', JSON.stringify(selectedMateriais));
-    updateTotalQuantity();
 }
 
 // Zera as solicitações antes de abrir a pagina
